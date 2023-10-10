@@ -9,11 +9,13 @@ const container = document.querySelector(".container");
 fetch(url, options)
   .then((res) => res.json())
   .then((data) => {
-    container.innerHTML += `
-          <span class="title">#Don't Laugh Challenge</span>
-          <p class="joke">${data[0].joke}</p>
-          <button class="btn" onclick="getNewJoke()">Get Another Joke</button>
-          `;
+    data.forEach(({ joke }) => {
+      container.innerHTML += `
+              <span class="title">#Don't Laugh Challenge</span>
+              <p class="joke">${joke}</p>
+              <button class="btn" onclick="getNewJoke()">Get Another Joke</button>
+              `;
+    });
   });
 
 function getNewJoke() {
