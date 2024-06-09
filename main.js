@@ -1,14 +1,15 @@
 let options = {
   method: "GET",
-  headers: { "X-Api-Key": "rWpBwJzunYSJv7tTCqBDXA==g48LVHZEVAsnC45y" },
+  headers: { "X-Api-Key": "uZc1mt6SGZWbkplsWPAAr8gnIBmStFzRsu0szXiQ" },
 };
 
-let url = "https://api.api-ninjas.com/v1/dadjokes?limit=1";
+let url = "https://api.api-ninjas.com/v1/dadjokes";
 
 const container = document.querySelector(".container");
 fetch(url, options)
   .then((res) => res.json())
   .then((data) => {
+    // console.log(data); // For debugging 
     data.forEach(({ joke }) => {
       container.innerHTML += `
               <span class="title">#Don't Laugh Challenge</span>
